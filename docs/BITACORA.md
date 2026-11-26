@@ -2,7 +2,7 @@
 
 Registro de lo decidido y lo construido, para que cualquier persona del equipo pueda continuar el trabajo.
 
-**Estado al 25 de noviembre de 2026:** boletín n.º 1 completo en vista previa. No está publicado en internet; falta subirlo a GitHub y Render.
+**Estado al 25 de noviembre de 2026:** boletín n.º 1 completo. Los dos repositorios están en GitHub (cuenta `cahuba26`) y los medios ya están publicados en Render. Falta publicar el boletín en Render.
 
 ---
 
@@ -83,15 +83,17 @@ Las animaciones se detienen si el celular tiene activada la opción de reducir m
 | v1 | 25 nov 2026 | Primera versión: 10 capítulos, portada ilustrada, video, galería, veeduría. |
 | v2 | 25 nov 2026 | Reestructura como sitio estático para GitHub + Render; medios por URL; documentación; capítulos del sensor de luz (video por pasos) y de la app. |
 | v3 | 25 nov 2026 | Logos; sin presupuesto ni cronogramas; lenguaje más sencillo; capítulos "Nuestro encuentro con la JAC" y "La Picacha llega al mundo". |
+| v5 | 25 nov 2026 | Repositorios en GitHub; medios publicados en Render; `config.js` apunta al sitio de medios. |
 | v4 | 25 nov 2026 | Medios en un segundo repositorio en Render. Portada animada; se quita "¿Cómo vamos?"; "Lo que sigue" sobre un río animado; capítulo de energía en positivo; animaciones del anillo y la fibra óptica; números de versión para evitar memoria vieja. |
 
 ## 6. Pendientes
 
 **Antes de publicar:**
 
-- [ ] Crear los dos repositorios en GitHub y subir los archivos.
-- [ ] Crear la cuenta de Render y publicar primero los medios y después el boletín.
-- [ ] Poner la dirección de los medios en `config.js`.
+- [x] Crear los dos repositorios en GitHub: `cahuba26/boletin-foton-ia-media` y `cahuba26/boletin-foton-ia`.
+- [x] Publicar los medios en Render: https://boletin-foton-ia-media.onrender.com
+- [x] Poner la dirección de los medios en `config.js`.
+- [ ] Publicar el boletín en Render (Blueprint de `cahuba26/boletin-foton-ia`).
 - [ ] Confirmar que los 3 trabajos del congreso latinoamericano de óptica (LAOP, Bogotá, 10 nov) se presentaron.
 - [ ] Confirmar el correo de contacto publicado.
 - [ ] Confirmar la autorización de las personas en las fotos de la visita.
