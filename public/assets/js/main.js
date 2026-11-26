@@ -211,6 +211,75 @@ setCur(-1);
   }
 }
 
+/* ---------- Capítulo 6: simulador del semáforo del agua (ejemplo pedagógico) ---------- */
+{
+  const T = $('#sTurb'), P = $('#sPh'), O = $('#sOx'), Pb = $('#sPb');
+  // EDITABLE: niveles del medidor (límite superior, nombre, color, qué hacer)
+  const niveles = [
+    [.15,'Muy bajo','#1f8a4c','Todo tranquilo.','La quebrada está como en un día normal. Los sensores siguen midiendo cada 30 minutos.'],
+    [.35,'Bajo','#6aa82f','Normal, con pequeños cambios.','Nada que hacer por ahora. El sistema sigue vigilando.'],
+    [.55,'Moderado','#d9a400','Atención.','Algo está cambiando, por ejemplo después de un aguacero. El sistema vigila de cerca.'],
+    [.75,'Alto','#f08c2a','Alerta temprana (naranja).','Algo se salió de lo normal. El Comité JAC–Academia verifica en el punto, toma fotos y anota la hora.'],
+    [9,'Muy alto','#e4573d','Alerta (rojo).','Posible vertimiento. Evite el contacto con el agua, avise al comité y reporte a la autoridad ambiental con los datos del sistema.']
+  ];
+  // EDITABLE: momentos de ejemplo [turbiedad, pH, oxígeno, plomo µg/L]
+  const momentos = { normal:[12,7.3,7.8,2], lluvia:[180,7.1,6.8,6], oxigeno:[40,7.0,1.8,3], plomo:[20,7.2,7.0,32], vertimiento:[220,9.6,2.2,28] };
+  // arcos del medidor
+  const arcs = $('#simArcs'), R = 92, cx = 120, cy = 120;
+  const pt = a => [cx + R*Math.cos(Math.PI*(1-a)), cy - R*Math.sin(Math.PI*(1-a))];
+  let a0 = 0;
+  arcs.innerHTML = niveles.map((n,i) => {
+    const a1 = (i+1)/niveles.length, [x0,y0] = pt(a0+.006), [x1,y1] = pt(a1-.006); a0 = a1;
+    return `<path d="M${x0.toFixed(1)} ${y0.toFixed(1)} A${R} ${R} 0 0 1 ${x1.toFixed(1)} ${y1.toFixed(1)}" fill="none" stroke="${n[2]}" stroke-width="22"/>`;
+  }).join('');
+  // burbujas
+  const bubG = $('#simBubbles');
+  bubG.innerHTML = Array.from({length:10}, (_,i) => `<circle class="bub" cx="${18 + i*21}" cy="${140 - (i%3)*8}" r="${2 + (i%3)}" style="animation-delay:${(-i*.37).toFixed(2)}s"/>`).join('');
+  const bubs = [...bubG.children];
+  // partículas de plomo: puntos grises que aparecen en el agua según la concentración
+  let sd = 11; const rnd = () => (sd = sd*16807 % 2147483647) / 2147483647;
+  $('#simLead').innerHTML = Array.from({length:25}, () => `<circle cx="${(8 + rnd()*224).toFixed(0)}" cy="${(74 + rnd()*70).toFixed(0)}" r="${(1.4 + rnd()*1.6).toFixed(1)}"/>`).join('');
+  const leads = [...$('#simLead').children];
+  const mix = (c1, c2, k) => { const h = c => [1,3,5].map(i => parseInt(c.slice(i,i+2),16)); const A = h(c1), B = h(c2); return 'rgb(' + A.map((v,i) => Math.round(v + (B[i]-v)*k)).join(',') + ')'; };
+  const clamp = v => Math.max(0, Math.min(1, v));
+  const fmt = v => String(v).replace('.', ',');
+  const calc = () => {
+    const t = +T.value, p = +P.value, o = +O.value, b = +Pb.value;
+    // plomo: sin riesgo bajo 5 µg/L; el límite del agua para tomar (10 µg/L) ya suma; desde 30 µg/L es el máximo
+    const s = [clamp((t-25)/225), clamp(Math.max(6.5-p, p-8.5)/2), clamp((6-o)/5), clamp((b-5)/25)];
+    const mx = Math.max(...s), risk = .65*mx + .35*(s[0]+s[1]+s[2]+s[3])/4;
+    const n = niveles.find(x => risk < x[0]);
+    $('#vTurb').textContent = (t < 10 ? 'Cristalina' : t < 50 ? 'Un poco turbia' : t < 150 ? 'Turbia' : 'Muy turbia') + ' · ' + t + ' NTU';
+    $('#vPh').textContent = (p < 6.5 ? 'Ácida' : p <= 8.5 ? 'Normal' : 'Alcalina, como jabonosa') + ' · ' + fmt(p.toFixed(1));
+    $('#vPb').textContent = (b < 5 ? 'Muy bajo' : b <= 10 ? 'Dentro del límite' : b < 25 ? 'Por encima del límite' : 'Muy alto') + ' · ' + fmt(b.toFixed(1)) + ' µg/L';
+    $('#vOx').textContent = (o < 3 ? 'Muy poco' : o < 5 ? 'Poco' : 'Bueno') + ' · ' + fmt(o.toFixed(1)) + ' mg/L';
+    $('#simNeedle').style.transform = 'rotate(' + (-90 + Math.min(risk,1)*180).toFixed(1) + 'deg)';
+    const lv = $('#simLevel'); lv.textContent = n[1]; lv.style.color = n[2];
+    $('#simMsg').style.borderLeftColor = n[2];
+    $('#simMsgT').textContent = n[3]; $('#simMsgT').style.color = n[2];
+    $('#simMsgD').textContent = n[4];
+    const why = ['la turbiedad', 'la acidez', 'el poco oxígeno', 'el plomo'][s.indexOf(mx)];
+    $('#simWhy').textContent = risk >= .15 ? 'Lo que más pesa ahora: ' + why + '.' : '';
+    $('#simWater').setAttribute('fill', mix('#3fb3c9', '#8a6a3a', clamp(t/260)));
+    $('#simFoam').setAttribute('opacity', clamp((Math.max(s[0], s[1]) - .5)/.3).toFixed(2));   // espuma: agua turbia o jabonosa
+    $('#simFish').setAttribute('opacity', (1 - clamp(s[2]*1.1 + s[1]*.6 + s[3]*.8)).toFixed(2));   // los peces se van con poco oxígeno, acidez o plomo
+    $('#simLed').setAttribute('fill', n[2]);
+    const np = Math.round(b/2);
+    leads.forEach((d,i) => d.style.display = i < np ? '' : 'none');
+    const nb = Math.round(o);
+    bubs.forEach((b,i) => b.style.display = i < nb ? '' : 'none');
+  };
+  [T,P,O,Pb].forEach(r => r.addEventListener('input', () => { document.querySelectorAll('.sim-presets button').forEach(b => b.setAttribute('aria-pressed', false)); calc(); }));
+  document.querySelector('.sim-presets').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    const v = momentos[b.dataset.p]; [T.value, P.value, O.value, Pb.value] = v;
+    document.querySelectorAll('.sim-presets button').forEach(x => x.setAttribute('aria-pressed', x === b));
+    calc();
+  });
+  document.querySelector('.sim-presets button').setAttribute('aria-pressed', true);
+  calc();
+}
+
 /* ---------- Lo que sigue: las paradas aparecen una a una al llegar al río ---------- */
 {
   const river = document.getElementById('river');

@@ -69,7 +69,7 @@ Mientras `config.js` tenga `MEDIA_BASE: "media/"`, el sitio usa la carpeta local
 | 3 | ¿Por qué medir todo el día? | Interactivo: una muestra al día vs. medir todo el tiempo |
 | 4 | Así funciona el sensor de luz | Video con 6 pasos tocables y el anillo explicado como una pista |
 | 5 | Del agua a su celular | Medir (con animaciones del anillo y la fibra óptica) → Enviar → Analizar → Avisar; glosario |
-| 6 | Una app para la comunidad | Pantallas del prototipo y cómo va cada función |
+| 6 | Una app para la comunidad | Pantallas del prototipo, **simulador del semáforo del agua** (turbiedad, pH, plomo y oxígeno) y cómo va cada función |
 | 7 | Nuestro encuentro con la JAC | Fotos de la visita, lo que acordamos y los tres puntos |
 | 8 | La Picacha llega al mundo | Ponencias y pósteres internacionales |
 | 9 | Así trabajamos | Galería por temas |

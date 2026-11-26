@@ -392,3 +392,49 @@ button{font:inherit;cursor:pointer}
 .formframe{margin-top:16px;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#fff}
 .formframe iframe{display:block;width:100%;height:min(1800px,240vh);border:0}
 @media(max-width:760px){.formcard{grid-template-columns:minmax(0,1fr);padding:18px}.fc-facts{grid-template-columns:minmax(0,1fr)}.fc-facts li{grid-template-columns:auto minmax(0,1fr);gap:8px;align-items:baseline}.formframe iframe{height:2600px}}
+
+/* ---------- Simulador del semáforo del agua (capítulo 6) ---------- */
+.sim{margin:6px 0 30px;border:2px solid var(--teal);border-radius:22px;padding:clamp(16px,3vw,26px);background:linear-gradient(180deg,var(--mint),var(--paper) 40%)}
+.sim-head h3{font-size:24px}
+.sim-head p{margin:0 0 12px}
+.sim-presets{display:flex;flex-wrap:wrap;gap:8px}
+.sim-presets button{min-height:44px;padding:0 16px;border-radius:999px;border:2px solid var(--teal);background:var(--paper);color:var(--teal-ink);font-weight:700}
+.sim-presets button[aria-pressed=true]{background:var(--teal);color:var(--paper)}
+.sim-body{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:22px;margin-top:18px;align-items:start}
+.sim-viz{display:grid;gap:12px}
+.sim-scene{width:100%;height:auto;aspect-ratio:240/150;border-radius:16px;display:block}
+#simWater{transition:fill .6s}
+#simFoam,#simFish{transition:opacity .6s}
+#simLed{transition:fill .4s}
+.fish{animation:swim 4s ease-in-out infinite}
+.f2{animation-duration:5.2s;animation-delay:-1.4s}
+@keyframes swim{50%{translate:14px -3px}}
+.bub{animation:rise 3s linear infinite}
+@keyframes rise{from{transform:translateY(0);opacity:.9}to{transform:translateY(-70px);opacity:0}}
+.sim-meter{background:var(--paper);border-radius:16px;padding:10px 12px 12px;border:1px solid var(--line);text-align:center}
+.sim-meter svg{width:100%;max-width:300px;height:auto;display:block;margin:0 auto}
+.needle{transform-origin:120px 120px;transition:transform .7s cubic-bezier(.3,1.4,.5,1)}
+.sim-level{margin:2px 0 0;font:800 26px Figtree,sans-serif;transition:color .4s}
+.sim-ctrl{display:grid;gap:14px}
+.rng{display:grid;gap:4px;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+.rl{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.rl b{font:800 17px Figtree,sans-serif;color:var(--teal-ink)}
+.rl em{font-style:normal;font-weight:700;font-size:15px;color:var(--teal);white-space:nowrap}
+.rh{font-size:14px;color:var(--soft)}
+.rng input{width:100%;margin:8px 0 2px;accent-color:#0b5d55;height:28px}
+.sim-msg{margin-top:18px;border-radius:16px;padding:16px 18px;display:grid;gap:4px;border-left:8px solid var(--teal);background:var(--paper);transition:border-color .4s}
+.sim-msg b{font:800 19px Figtree,sans-serif}
+.sim-msg small{font-size:14px;color:var(--soft)}
+@media(max-width:760px){
+.sim-body{grid-template-columns:minmax(0,1fr)}
+.sim-viz{position:sticky;top:62px;z-index:5;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:8px;background:var(--paper);padding:8px;border-radius:18px;box-shadow:0 6px 18px rgba(0,0,0,.12)}
+.sim-scene{height:100%;aspect-ratio:auto;min-height:118px}
+.sim-meter{padding:6px;display:grid;align-content:center}
+.sim-level{font-size:19px}
+}
+@media(prefers-reduced-motion:reduce){.fish,.bub{animation:none}.needle{transition:none}}
+.rng-pb{position:relative;border-color:#9aa5b1}
+.pbscale{position:relative;height:18px;display:block;margin:0 9px}
+.pbscale i{position:absolute;top:-8px;width:2px;height:10px;background:#e4573d}
+.pbscale small{position:absolute;top:2px;transform:translateX(-50%);font-size:12px;color:#e4573d;font-weight:700;white-space:nowrap}
+#simLead circle{transition:opacity .4s}

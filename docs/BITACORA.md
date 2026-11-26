@@ -66,7 +66,7 @@ C:\Users\churt\Documents\Boletin_Foton_IA\
 | 3 | ¿Por qué medir todo el día? | Comparador: una muestra al día vs. medir todo el tiempo |
 | 4 | Así funciona el sensor de luz | Video con 6 pasos tocables; anillo animado; fotos de chips reales |
 | 5 | Del agua a su celular | Animaciones del anillo del chip y de la fibra óptica; glosario de tarjetas |
-| 6 | Una app para la comunidad | Pantallas del prototipo deslizables; estado de cada función |
+| 6 | Una app para la comunidad | Pantallas del prototipo deslizables; simulador del semáforo del agua (4 barras, 5 momentos de ejemplo, quebrada que reacciona); estado de cada función |
 | 7 | Nuestro encuentro con la JAC | Fotos de la visita, acuerdos y dibujo de los tres puntos |
 | 8 | La Picacha llega al mundo | Recorrido Medellín → Francia → Nueva York → en línea → Bogotá; mural de fotos de congresos |
 | 9 | Así trabajamos | Galería por temas con foto ampliable |
@@ -85,6 +85,7 @@ Las animaciones se detienen si el celular tiene activada la opción de reducir m
 | v1 | 25 nov 2026 | Primera versión: 10 capítulos, portada ilustrada, video, galería, veeduría. |
 | v2 | 25 nov 2026 | Reestructura como sitio estático para GitHub + Render; medios por URL; documentación; capítulos del sensor de luz (video por pasos) y de la app. |
 | v3 | 25 nov 2026 | Logos; sin presupuesto ni cronogramas; lenguaje más sencillo; capítulos "Nuestro encuentro con la JAC" y "La Picacha llega al mundo". |
+| v9 | 26 nov 2026 | Simulador del semáforo del agua en el capítulo 6: barras de turbiedad, pH, plomo y oxígeno; medidor de 5 niveles; quebrada dibujada que reacciona (color, burbujas, peces, espuma, partículas de plomo); mensajes de qué hacer en cada nivel. |
 | v8 | 26 nov 2026 | Capítulo 14 "Su opinión cuenta" con el formulario de evaluación de la capacitación (Google Forms); botón "Evaluar la capacitación" en la portada; glosario con MQTT, semáforo de riesgo y bandas de incertidumbre. |
 | v7.1 | 26 nov 2026 | Boletín publicado en Render; medios actualizados (35 archivos). |
 | v7 | 25 nov 2026 | Logos de aliados internacionales (BSU, C2N, Toulouse); se retira MIT. |
@@ -117,7 +118,12 @@ Las animaciones se detienen si el celular tiene activada la opción de reducir m
 
 - [ ] Activar en Google Forms el aviso al correo y vincular las respuestas con Google Sheets.
 
+- [ ] Validar con el equipo de la UdeM los límites del simulador del semáforo.
+
 **En evaluación:**
+
+- [ ] Mini juego "Arme el sistema" (aprobado como idea; próximo a prototipar).
+- [ ] Cajita de contacto con envío de correo al investigador (Google Apps Script), con autorización de datos (Ley 1581 de 2012).
 
 - [ ] Efecto de libro (pasar páginas). Ver la sección 7.
 

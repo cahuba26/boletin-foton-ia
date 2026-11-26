@@ -26,6 +26,8 @@ El público es la comunidad de la JAC Guanteros, no especialistas.
 | Los pasos y segundos del video | `public/assets/js/main.js` | `const pasos` |
 | Las fotos de la galería | `public/assets/js/main.js` | `const galeria` |
 | Las preguntas de veeduría | `public/assets/js/main.js` | `const preguntas` |
+| Niveles y mensajes del simulador del semáforo | `public/assets/js/main.js` | `const niveles` |
+| Momentos de ejemplo del simulador | `public/assets/js/main.js` | `const momentos` |
 | Fotos y video | `public/assets/js/config.js` | ver `GUIA_MEDIOS.md` |
 | El formulario de evaluación | `public/assets/js/config.js` | `FORM_URL` |
 | Colores | `public/assets/css/styles.css` | `:root` al inicio |
@@ -95,3 +97,11 @@ Las respuestas **no** pasan por el boletín: quedan en Google Forms. Allí:
 - **Ver respuestas:** pestaña **Respuestas**.
 - **Excel:** **Respuestas → Vincular con Hojas de cálculo**; luego, en Google Sheets, **Archivo → Descargar → Microsoft Excel (.xlsx)**.
 - **Aviso al correo:** **Respuestas → ⋮ (tres puntos) → Recibir notificaciones por correo electrónico de nuevas respuestas**.
+
+## Simulador del semáforo del agua (capítulo 6)
+
+Cuatro barras (turbiedad, acidez, plomo y oxígeno) mueven un medidor de cinco niveles, de muy bajo a muy alto. Es un **ejemplo pedagógico**: los límites no son los del modelo de inteligencia artificial del proyecto.
+
+- **Niveles, colores y mensajes de "¿qué hacemos?":** lista `niveles` en `main.js`.
+- **Momentos de ejemplo** (Día normal, Después de un aguacero, Agua sin oxígeno, Plomo en el agua, Vertimiento de noche): lista `momentos`, con los valores `[turbiedad, pH, oxígeno, plomo]`.
+- **Referencias usadas:** pH normal entre 6,5 y 8,5; poco oxígeno por debajo de 6 mg/L; plomo de 10 µg/L, el máximo para el agua de consumo humano en Colombia (Resolución 2115 de 2007, 0,01 mg/L). La Picacha no es agua para tomar: el 10 µg/L se usa como referencia fácil de entender.
