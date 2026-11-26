@@ -77,6 +77,7 @@ Mientras `config.js` tenga `MEDIA_BASE: "media/"`, el sitio usa la carpeta local
 | 11 | Quiénes hacemos Fotón-IA | Instituciones con sus logos, JAC y Ruta N |
 | 12 | Lo que sigue | Próximas paradas sobre un río animado, sin fechas |
 | 13 | Su papel en la veeduría | Lista de preguntas que se guarda en el celular |
+| 14 | Su opinión cuenta | Formulario de evaluación de la capacitación (Google Forms): botón y opción de responder dentro del boletín |
 
 ## Línea editorial
 

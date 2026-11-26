@@ -27,6 +27,7 @@ El público es la comunidad de la JAC Guanteros, no especialistas.
 | Las fotos de la galería | `public/assets/js/main.js` | `const galeria` |
 | Las preguntas de veeduría | `public/assets/js/main.js` | `const preguntas` |
 | Fotos y video | `public/assets/js/config.js` | ver `GUIA_MEDIOS.md` |
+| El formulario de evaluación | `public/assets/js/config.js` | `FORM_URL` |
 | Colores | `public/assets/css/styles.css` | `:root` al inicio |
 
 > **Importante:** si cambia `styles.css`, `config.js` o `main.js`, suba el número `?v=4` (a `?v=5`, `?v=6`...) donde `index.html` carga esos archivos. Así los celulares no muestran la versión vieja guardada en memoria.
@@ -78,3 +79,19 @@ Los logos están en el capítulo 11 y en el pie de página. Cada uno es una tarj
 ```
 
 Si el archivo del logo todavía no está en el repositorio de medios, la tarjeta muestra el nombre en un recuadro, sin romperse. Para agregarlo, súbalo al repositorio `boletin-foton-ia-media` con el nombre exacto (por ejemplo `logo-c2n.jpg`).
+
+## Formulario de evaluación (capítulo 14)
+
+El formulario es de **Google Forms** y se configura en una sola línea de `public/assets/js/config.js`:
+
+```js
+FORM_URL: "https://docs.google.com/forms/d/e/.../viewform",
+```
+
+Para usar otro formulario (por ejemplo, el de una nueva capacitación), en Google Forms vaya a **Enviar → enlace**, copie el enlace y péguelo ahí **sin** lo que va después de `viewform`. El boletín ofrece dos maneras de responder: un botón que abre el formulario y la opción "Responderlo aquí mismo", que lo muestra dentro de la página.
+
+Las respuestas **no** pasan por el boletín: quedan en Google Forms. Allí:
+
+- **Ver respuestas:** pestaña **Respuestas**.
+- **Excel:** **Respuestas → Vincular con Hojas de cálculo**; luego, en Google Sheets, **Archivo → Descargar → Microsoft Excel (.xlsx)**.
+- **Aviso al correo:** **Respuestas → ⋮ (tres puntos) → Recibir notificaciones por correo electrónico de nuevas respuestas**.

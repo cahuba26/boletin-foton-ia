@@ -379,3 +379,16 @@ button{font:inherit;cursor:pointer}
 }
 @media(max-width:420px){.world-nums{grid-template-columns:minmax(0,1fr)}}
 .m-tall img{object-position:72% center}
+
+/* ---------- Capítulo 14: formulario ---------- */
+.formcard{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:24px;align-items:center;background:var(--mint);border-radius:20px;padding:24px;margin-top:6px}
+.fc-facts{list-style:none;margin:0 0 16px;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.fc-facts li{background:var(--paper);border-radius:14px;padding:12px 14px;display:grid;gap:2px;align-content:start}
+.fc-facts b{font:800 18px Figtree,sans-serif;color:var(--teal-ink)}
+.fc-facts span{font-size:14px;color:var(--soft)}
+.fc-actions{display:grid;gap:10px}
+.btn-big{min-height:56px;justify-content:center;font-size:18px}
+.btn-line{background:var(--paper);color:var(--teal);border-color:var(--teal);justify-content:center}
+.formframe{margin-top:16px;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#fff}
+.formframe iframe{display:block;width:100%;height:min(1800px,240vh);border:0}
+@media(max-width:760px){.formcard{grid-template-columns:minmax(0,1fr);padding:18px}.fc-facts{grid-template-columns:minmax(0,1fr)}.fc-facts li{grid-template-columns:auto minmax(0,1fr);gap:8px;align-items:baseline}.formframe iframe{height:2600px}}

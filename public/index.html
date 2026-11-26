@@ -5,7 +5,7 @@
   Para editar textos: busque el capítulo (id="c1", id="c2"...) y cambie el texto entre etiquetas.
   Las imágenes usan data-media="nombre" y se cargan desde la URL definida en assets/js/config.js.
   Guía completa: README.md y carpeta docs/.
-  IMPORTANTE: cada vez que cambie styles.css, config.js o main.js, suba el número ?v= (por ejemplo de ?v=7 a ?v=7)
+  IMPORTANTE: cada vez que cambie styles.css, config.js o main.js, suba el número ?v= (por ejemplo de ?v=8 a ?v=8)
   en las líneas que los cargan, para que los celulares no muestren la versión vieja guardada en memoria.
 -->
 <html lang="es">
@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css?v=7">
+<link rel="stylesheet" href="assets/css/styles.css?v=8">
 </head>
 <body>
 
@@ -42,6 +42,7 @@
         <div class="cta">
           <a class="btn btn-light" href="#c1">Empezar a leer</a>
           <a class="btn btn-ghost" href="#c4">Ver el video del sensor</a>
+          <a class="btn btn-ghost" href="#c14">Evaluar la capacitación</a>
         </div>
       </div>
     </div>
@@ -425,6 +426,30 @@
   <div class="folio"><span>Fotón-IA · Boletín n.º 1</span><span class="pg"></span></div>
 </section>
 
+<!-- ======================= EVALUACIÓN (formulario de Google Forms) ======================= -->
+<section class="page" id="c14" data-t="Su opinión cuenta">
+  <span class="chap">Capítulo 14</span>
+  <h2>Su opinión cuenta</h2>
+  <p class="intro">Si participó en la capacitación con el equipo Fotón-IA, cuéntenos qué aprendió y cómo le pareció. Sus respuestas nos ayudan a explicar mejor y a mejorar la app.</p>
+  <div class="formcard">
+    <div class="fc-info">
+      <ul class="fc-facts">
+        <li><b>5 minutos</b><span>es lo que toma responderlo</span></li>
+        <li><b>Anónimo</b><span>el nombre es opcional</span></li>
+        <li><b>Desde el celular</b><span>no necesita cuenta de Google</span></li>
+      </ul>
+      <p style="margin:0">Tiene dos partes: unas preguntas sobre lo que vimos (los sensores, cómo viajan los datos, el semáforo de riesgo y las gráficas de la app) y una calificación de la jornada.</p>
+    </div>
+    <div class="fc-actions">
+      <a class="btn btn-teal btn-big" id="formOpen" href="#" target="_blank" rel="noopener">Responder el formulario</a>
+      <button class="btn btn-line" type="button" id="formHere" aria-expanded="false">Responderlo aquí mismo</button>
+    </div>
+  </div>
+  <div class="formframe" id="formFrame" hidden></div>
+  <p class="note">El formulario es de Google Forms. Las respuestas solo las ve el equipo del proyecto.</p>
+  <div class="folio"><span>Fotón-IA · Boletín n.º 1</span><span class="pg"></span></div>
+</section>
+
 </main>
 
 <footer class="foot">
@@ -452,7 +477,7 @@
   <div><img id="lbImg" alt=""><p id="lbCap"></p></div>
 </div>
 
-<script src="assets/js/config.js?v=7"></script>
-<script src="assets/js/main.js?v=7"></script>
+<script src="assets/js/config.js?v=8"></script>
+<script src="assets/js/main.js?v=8"></script>
 </body>
 </html>

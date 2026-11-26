@@ -62,7 +62,10 @@ const glosario = [
   ['Inteligencia artificial','Programas que aprenden de muchos datos a reconocer patrones, por ejemplo, cómo se ve un vertimiento.'],
   ['Tiempo real','Saber lo que pasa casi en el mismo momento en que ocurre, no días después.'],
   ['Alerta temprana','Un aviso que llega a tiempo para actuar: verificar, denunciar o protegerse.'],
-  ['Veeduría','Que la comunidad acompañe y vigile un proyecto para que cumpla lo que promete.']
+  ['Veeduría','Que la comunidad acompañe y vigile un proyecto para que cumpla lo que promete.'],
+  ['Transmisión inalámbrica (MQTT)','La forma en que la caja envía sus mediciones, sin cables y de manera automática, hasta el sistema. MQTT es el “idioma” que usan para hablar entre ellas.'],
+  ['Semáforo de riesgo','Colores que resumen cómo está el agua. Naranja (alto) o rojo (muy alto) es una alerta temprana: algo se salió de lo normal y conviene verificar.'],
+  ['Bandas de incertidumbre','La franja sombreada alrededor de la línea en la gráfica de la app. Muestra el margen que la inteligencia artificial espera alrededor de su predicción.']
 ];
 $('#gloss').innerHTML = glosario.map(g => `<button type="button" class="card" aria-pressed="false"><b>${esc(g[0])}</b><span class="front"><small>Ver significado</small></span><span class="back">${esc(g[1])}</span></button>`).join('');
 $('#gloss').addEventListener('click', e => { const c = e.target.closest('.card'); if (!c) return; const on = c.classList.toggle('on'); c.setAttribute('aria-pressed', on); });
@@ -181,6 +184,32 @@ coverObserver.observe($('#portada'));
 $('#prev').addEventListener('click', () => (cur <= 0 ? $('#portada') : pages[cur-1]).scrollIntoView());
 $('#next').addEventListener('click', () => pages[Math.min(cur+1, pages.length-1)].scrollIntoView());
 setCur(-1);
+
+/* ---------- Capítulo 14: formulario de evaluación (Google Forms) ---------- */
+{
+  const url = CFG.FORM_URL || '';
+  const open = $('#formOpen'), here = $('#formHere'), box = $('#formFrame');
+  if (!url) {
+    open.replaceWith(Object.assign(document.createElement('p'), {className:'note', textContent:'Formulario pendiente (revise FORM_URL en assets/js/config.js).'}));
+    here.remove();
+  } else {
+    open.href = url;
+    here.addEventListener('click', () => {
+      const show = box.hidden;
+      box.hidden = !show;
+      here.setAttribute('aria-expanded', show);
+      here.textContent = show ? 'Ocultar el formulario' : 'Responderlo aquí mismo';
+      if (show && !box.firstChild) {   // el formulario solo se carga si la persona lo pide
+        const f = document.createElement('iframe');
+        f.src = url + '?embedded=true';
+        f.title = 'Formulario de evaluación de la capacitación Fotón-IA';
+        f.loading = 'lazy';
+        box.appendChild(f);
+      }
+      if (show) box.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  }
+}
 
 /* ---------- Lo que sigue: las paradas aparecen una a una al llegar al río ---------- */
 {

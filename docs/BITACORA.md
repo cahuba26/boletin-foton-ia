@@ -29,6 +29,7 @@ Es una actividad de **apropiación social del conocimiento**: la comunidad es ac
 | Contar los resultados de energía en positivo ("seguimos explorando") | No presentar como fracaso un trabajo de exploración científica. |
 | Imágenes y video fuera del repositorio del boletín | El repositorio queda solo con texto. Los medios viven en un segundo repositorio. |
 | Medios en un segundo sitio estático en Render (no Cloudinary) | Cloudinary pedía pago. Render es gratis y se usa igual para el boletín. Se descartó jsDelivr porque sus condiciones prohíben usarlo para alojar medios y videos. |
+| Formulario de evaluación con Google Forms, enlazado e incrustado en el boletín | El formulario ya existía y era urgente para la capacitación del 26 de noviembre. Las respuestas quedan en Google Forms / Sheets (exportable a Excel), con aviso al correo. Se evaluó también un formulario propio conectado a Google Sheets, que queda como opción a futuro. |
 | Números de versión `?v=` en los archivos de estilo y código | Evita que los celulares muestren una versión vieja guardada en memoria. |
 
 ## 3. Arquitectura
@@ -55,7 +56,7 @@ C:\Users\churt\Documents\Boletin_Foton_IA\
 └── Alerta_Tempranas_UNAL_Video.mp4  ← video original
 ```
 
-## 4. Contenido actual (13 capítulos)
+## 4. Contenido actual (14 capítulos)
 
 | # | Capítulo | Interactividad |
 |---|---|---|
@@ -73,6 +74,7 @@ C:\Users\churt\Documents\Boletin_Foton_IA\
 | 11 | Quiénes hacemos Fotón-IA | Solo logos y nombres: universidades, Ruta N y aliados internacionales |
 | 12 | Lo que sigue | Línea de tiempo sobre un río animado, sin fechas |
 | 13 | Su papel en la veeduría | Lista de preguntas que se guarda en el celular |
+| 14 | Su opinión cuenta | Evaluación de la capacitación (Google Forms) |
 
 Las animaciones se detienen si el celular tiene activada la opción de reducir movimiento.
 
@@ -83,6 +85,7 @@ Las animaciones se detienen si el celular tiene activada la opción de reducir m
 | v1 | 25 nov 2026 | Primera versión: 10 capítulos, portada ilustrada, video, galería, veeduría. |
 | v2 | 25 nov 2026 | Reestructura como sitio estático para GitHub + Render; medios por URL; documentación; capítulos del sensor de luz (video por pasos) y de la app. |
 | v3 | 25 nov 2026 | Logos; sin presupuesto ni cronogramas; lenguaje más sencillo; capítulos "Nuestro encuentro con la JAC" y "La Picacha llega al mundo". |
+| v8 | 26 nov 2026 | Capítulo 14 "Su opinión cuenta" con el formulario de evaluación de la capacitación (Google Forms); botón "Evaluar la capacitación" en la portada; glosario con MQTT, semáforo de riesgo y bandas de incertidumbre. |
 | v7.1 | 26 nov 2026 | Boletín publicado en Render; medios actualizados (35 archivos). |
 | v7 | 25 nov 2026 | Logos de aliados internacionales (BSU, C2N, Toulouse); se retira MIT. |
 | v6 | 25 nov 2026 | Foto del chip de nitruro de silicio (cap. 4); mural de fotos de congresos y póster del ITM (cap. 8); "Quiénes hacemos" solo con logos y nombres, con Ruta N y aliados internacionales aparte; nuevo texto de la fibra óptica; portada del mismo ancho que las páginas y sin recuadro de datos; galería con pestaña "Congresos". |
@@ -111,6 +114,8 @@ Las animaciones se detienen si el celular tiene activada la opción de reducir m
 - [x] Foto adicional del chip de nitruro de silicio.
 - [ ] Logo de la JAC Guanteros, si existe.
 - [ ] Información adicional que indique el equipo.
+
+- [ ] Activar en Google Forms el aviso al correo y vincular las respuestas con Google Sheets.
 
 **En evaluación:**
 

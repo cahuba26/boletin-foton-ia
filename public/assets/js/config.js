@@ -31,7 +31,11 @@ window.FOTONIA_CONFIG = {
     portada: "video-portada"   // imagen que se ve antes de darle play
   },
 
-  /* 4) (Opcional) Dirección completa para una imagen específica,
+  /* 4) Formulario de evaluación (Google Forms). Pegue el enlace de "Enviar → enlace",
+     sin lo que va después de "viewform". Las respuestas quedan en Google Forms / Sheets. */
+  FORM_URL: "https://docs.google.com/forms/d/e/1FAIpQLSeUKryJ3ZPMijTVbyCm6tQ2cUn6R8oPyVha8_i3qt0fLDevrg/viewform",
+
+  /* 5) (Opcional) Dirección completa para una imagen específica,
      si alguna está alojada en otro lugar.
      Ejemplo:  "chip-moneda": "https://otro-sitio.com/chip.jpg" */
   OVERRIDES: {
