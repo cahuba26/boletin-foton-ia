@@ -1,0 +1,15 @@
+# Las imágenes y el video NO se suben a GitHub: viven en el repositorio boletin-foton-ia-media (ver docs/GUIA_MEDIOS.md).
+public/media/
+*.mp4
+*.mov
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.zip
+!public/assets/*.svg
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini

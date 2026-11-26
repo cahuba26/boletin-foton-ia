@@ -1,0 +1,15 @@
+# Blueprint de Render: sitio estático, sin compilación.
+# Render publica solo la carpeta public/ (la documentación no queda en la web).
+services:
+  - type: web
+    name: boletin-foton-ia
+    runtime: static
+    buildCommand: echo "Sitio estatico sin compilacion"
+    staticPublishPath: ./public
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /assets/*
+        name: Cache-Control
+        value: public, max-age=3600
