@@ -21,18 +21,19 @@ Por decisión del equipo, el boletín **no incluye presupuestos ni cronogramas**
 | 5 | Señal de radio de largo alcance y copia de seguridad de los datos | Informe 6, actividad 12 |
 | 6 | Pantallas y funciones del prototipo de app | Informe 6, actividades 13, 16 y 17; Anexo 2 (reporte con foto) |
 | 7 | Reunión en la sede de la JAC, comité, tres puntos, medir 24/7, app co-diseñada, capacitaciones | Informe 2, actividad 18 (reunión del 4 de junio de 2026) |
-| 8 | Estado de cada parte y lo que sigue | Informe 6 y Anexo 2 (objetivo 5) |
-| 9 | 3 pósteres en FiO+LS 2026 (Rochester, Nueva York) | Informe 6, actividad 8 |
-| 9 | 2 ponencias del ITM en congreso internacional en línea | Informe 4, actividades 9 y 11 |
-| 9 | 3 trabajos en LAOP 2026 (Bogotá) | Informe 6, actividad 8 |
-| 9 | Chips fabricados en Francia (C2N) | Informe 6, actividad 6 |
-| 11 | Poca materia orgánica y mucho sedimento; poca energía | Informe 6, hito 4 |
-| 12 | Papel de cada institución | Anexo 2, justificación |
+| 8 | 3 pósteres en FiO+LS 2026 (Rochester, Nueva York) | Informe 6, actividad 8 |
+| 8 | 2 ponencias del ITM en congreso internacional en línea | Informe 4, actividades 9 y 11 |
+| 8 | 3 trabajos en LAOP 2026 (Bogotá), presentados | Informe 6, actividad 8; foto de la charla (carpeta `congresos`) |
+| 8 | Chips fabricados en Francia (C2N) | Informe 6, actividad 6 |
+| 10 | Muestras, análisis y celdas; exploración de electricidad e hidrógeno | Informes 3 a 6, hito 4 |
+| 11 | Papel de cada institución | Anexo 2, justificación |
+| 12 | Próximos pasos | Informe 6 (actividad 7) y Anexo 2 (objetivo 5) |
 
 ## Pendientes por confirmar antes de compartir
 
-1. **LAOP 2026 (Bogotá):** el informe 6 dice que los 3 trabajos estaban aceptados y pendientes de presentarse el 10 de noviembre. Confirmar que se presentaron (el capítulo 9 los cuenta como parte de los 8 trabajos).
+1. **Aliados internacionales:** se muestran Bridgewater State University, C2N y Universidad de Toulouse. MIT no se incluye, por decisión del equipo.
 2. **Correo de contacto:** se publica `hagomez@udemedellin.edu.co`. Confirmar o cambiar por un correo del proyecto.
 3. **Fotos de personas:** confirmar autorización de quienes aparecen en las fotos de la visita a la JAC.
 4. **Video:** confirmar con la UNAL que la explicación del capítulo 4 es correcta.
 5. **Logo de la JAC Guanteros:** si existe, agregarlo junto a los demás.
+6. **Pies de foto de los congresos:** confirmar si se quiere poner el nombre de los investigadores y en qué congreso se tomó la foto del póster de la UdeM.

@@ -59,18 +59,18 @@ C:\Users\churt\Documents\Boletin_Foton_IA\
 
 | # | Capítulo | Interactividad |
 |---|---|---|
-| Portada | Cuidando juntos la quebrada La Picacha | Agua que corre; celular con datos que cambian de Bien a Atención y Alerta |
+| Portada | Cuidando juntos la quebrada La Picacha | Agua que corre; celular con datos que cambian de Bien a Atención y Alerta. Mismo ancho que las páginas; probada a 360, 390, 768, 1024 y 1440 px |
 | 1 | Una carta para la comunidad | — |
 | 2 | La Picacha, nuestra quebrada | — |
 | 3 | ¿Por qué medir todo el día? | Comparador: una muestra al día vs. medir todo el tiempo |
-| 4 | Así funciona el sensor de luz | Video con 6 pasos tocables; anillo animado |
+| 4 | Así funciona el sensor de luz | Video con 6 pasos tocables; anillo animado; fotos de chips reales |
 | 5 | Del agua a su celular | Animaciones del anillo del chip y de la fibra óptica; glosario de tarjetas |
 | 6 | Una app para la comunidad | Pantallas del prototipo deslizables; estado de cada función |
 | 7 | Nuestro encuentro con la JAC | Fotos de la visita, acuerdos y dibujo de los tres puntos |
-| 8 | La Picacha llega al mundo | Recorrido Medellín → Francia → Nueva York → en línea → Bogotá |
+| 8 | La Picacha llega al mundo | Recorrido Medellín → Francia → Nueva York → en línea → Bogotá; mural de fotos de congresos |
 | 9 | Así trabajamos | Galería por temas con foto ampliable |
 | 10 | Buscando energía en el agua | Recorrido de 4 pasos |
-| 11 | Quiénes hacemos Fotón-IA | Logos de las instituciones |
+| 11 | Quiénes hacemos Fotón-IA | Solo logos y nombres: universidades, Ruta N y aliados internacionales |
 | 12 | Lo que sigue | Línea de tiempo sobre un río animado, sin fechas |
 | 13 | Su papel en la veeduría | Lista de preguntas que se guarda en el celular |
 
@@ -83,6 +83,8 @@ Las animaciones se detienen si el celular tiene activada la opción de reducir m
 | v1 | 25 nov 2026 | Primera versión: 10 capítulos, portada ilustrada, video, galería, veeduría. |
 | v2 | 25 nov 2026 | Reestructura como sitio estático para GitHub + Render; medios por URL; documentación; capítulos del sensor de luz (video por pasos) y de la app. |
 | v3 | 25 nov 2026 | Logos; sin presupuesto ni cronogramas; lenguaje más sencillo; capítulos "Nuestro encuentro con la JAC" y "La Picacha llega al mundo". |
+| v7 | 25 nov 2026 | Logos de aliados internacionales (BSU, C2N, Toulouse); se retira MIT. |
+| v6 | 25 nov 2026 | Foto del chip de nitruro de silicio (cap. 4); mural de fotos de congresos y póster del ITM (cap. 8); "Quiénes hacemos" solo con logos y nombres, con Ruta N y aliados internacionales aparte; nuevo texto de la fibra óptica; portada del mismo ancho que las páginas y sin recuadro de datos; galería con pestaña "Congresos". |
 | v5 | 25 nov 2026 | Repositorios en GitHub; medios publicados en Render; `config.js` apunta al sitio de medios. |
 | v4 | 25 nov 2026 | Medios en un segundo repositorio en Render. Portada animada; se quita "¿Cómo vamos?"; "Lo que sigue" sobre un río animado; capítulo de energía en positivo; animaciones del anillo y la fibra óptica; números de versión para evitar memoria vieja. |
 
@@ -94,14 +96,16 @@ Las animaciones se detienen si el celular tiene activada la opción de reducir m
 - [x] Publicar los medios en Render: https://boletin-foton-ia-media.onrender.com
 - [x] Poner la dirección de los medios en `config.js`.
 - [ ] Publicar el boletín en Render (Blueprint de `cahuba26/boletin-foton-ia`).
-- [ ] Confirmar que los 3 trabajos del congreso latinoamericano de óptica (LAOP, Bogotá, 10 nov) se presentaron.
+- [x] Trabajos de LAOP (Bogotá) presentados: confirmado con la foto de la charla.
+- [x] Logos de los aliados internacionales: Bridgewater State University, C2N y Universidad de Toulouse (MIT no se incluye, por decisión del equipo).
+- [ ] Subir las fotos y logos nuevos al repositorio de medios (`git push` en `boletin-foton-ia-media`).
 - [ ] Confirmar el correo de contacto publicado.
 - [ ] Confirmar la autorización de las personas en las fotos de la visita.
 - [ ] Que la UNAL revise la explicación del video (capítulo 4).
 
 **Contenido por agregar:**
 
-- [ ] Fotos adicionales de los chips que llegaron de Francia.
+- [x] Foto adicional del chip de nitruro de silicio.
 - [ ] Logo de la JAC Guanteros, si existe.
 - [ ] Información adicional que indique el equipo.
 

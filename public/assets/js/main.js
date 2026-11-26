@@ -12,6 +12,13 @@ const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>'
 /* ---------- Medios: arma la URL de cada imagen a partir de config.js ---------- */
 const mediaUrl = key => CFG.OVERRIDES && CFG.OVERRIDES[key] ? CFG.OVERRIDES[key] : (CFG.MEDIA_BASE || '') + key + (CFG.EXTENSION || '');
 const missing = img => {
+  if (img.dataset.fallback === 'name') {          // logos: si falta el archivo, se muestra solo el nombre
+    const n = document.createElement('div');
+    n.className = 'lg-name';
+    n.textContent = img.alt;
+    img.replaceWith(n);
+    return;
+  }
   const d = document.createElement('div');
   d.className = 'media-missing';
   d.textContent = 'Imagen pendiente: ' + (img.dataset.media || '') + ' (revise assets/js/config.js)';
@@ -103,7 +110,8 @@ $('#vsteps').addEventListener('click', e => {
 /* ---------- Capítulo 8: galería por temas (EDITABLE: nombre del archivo y pie de foto) ---------- */
 const galeria = {
   'Con la JAC': [['comunidad-grupo','Equipo Fotón-IA en la sede de la JAC Guanteros'],['comunidad-reunion','Reunión de trabajo con la comunidad'],['comunidad-charla','Diálogo con la JAC sobre los puntos de medición']],
-  'Chips de luz': [['chip-moneda','Chip fabricado en Francia junto a una moneda de 200 pesos'],['chip-montaje','El chip, listo para probarlo con luz en el laboratorio'],['mascara','Plano del chip: tres sensores diferentes en una pieza'],['posters','Pósteres presentados en un congreso internacional en Nueva York']],
+  'Chips de luz': [['chip-nitruro','Chip de nitruro de silicio fabricado en Francia'],['chip-moneda','Chip fabricado en Francia junto a una moneda de 200 pesos'],['chip-montaje','El chip, listo para probarlo con luz en el laboratorio'],['mascara','Plano del chip: tres sensores diferentes en una pieza']],
+  'Congresos': [['congreso-laop','Charla en el congreso latinoamericano de óptica LAOP 2026, Bogotá'],['congreso-poster-udem','Presentando un póster del proyecto'],['posters','Tres pósteres en el congreso internacional de óptica, Nueva York'],['poster-itm','Póster del ITM en un congreso internacional en línea']],
   'Sensores': [['nodo-sensores','Sensores conectados a la caja de medición'],['nodo-oled','La caja de medición mostrando sus lecturas'],['lab-montaje','Pruebas con fibras ópticas en el ITM'],['lab-fibras','Montaje con luz en el laboratorio'],['lab-fibra-optica','Equipo para trabajar las fibras ópticas']],
   'Agua y energía': [['bio-reactores','Celdas que buscan sacar energía del agua, en la UdeA'],['bio-muestras','Muestras de agua en análisis'],['bio-lab','Trabajo de laboratorio con las muestras'],['bio-horno','Horno para medir la arena y el barro del agua'],['bio-celda','Montaje de una celda de laboratorio']],
   'La app': [['app-concentraciones','Prototipo de la app con los datos del agua'],['app-riesgo','Medidor de riesgo en el celular'],['app-tendencia','La historia del día y las alertas']]
@@ -173,6 +181,54 @@ coverObserver.observe($('#portada'));
 $('#prev').addEventListener('click', () => (cur <= 0 ? $('#portada') : pages[cur-1]).scrollIntoView());
 $('#next').addEventListener('click', () => pages[Math.min(cur+1, pages.length-1)].scrollIntoView());
 setCur(-1);
+
+/* ---------- Lo que sigue: las paradas aparecen una a una al llegar al río ---------- */
+{
+  const river = document.getElementById('river');
+  if (river && 'IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    river.classList.add('anim');
+    const riverObserver = new IntersectionObserver(es => { if (es[0].isIntersecting) { river.classList.add('go'); riverObserver.disconnect(); } }, {threshold:.25});
+    riverObserver.observe(river);
+  }
+}
+
+/* ---------- Portada: el celular muestra datos que cambian (ilustrativo) ---------- */
+{
+  const line = document.getElementById('phLine'), end = document.getElementById('phEnd');
+  const card = document.getElementById('phCard'), dot = document.getElementById('phDot');
+  const st = document.getElementById('phState'), val = document.getElementById('phVal');
+  // 0 = agua tranquila, 1 = vertimiento fuerte. La serie se repite en bucle.
+  const guion = [.25,.3,.22,.28,.32,.26,.3,.35,.5,.72,.9,.84,.62,.42,.3,.27,.24,.3,.26,.22];
+  let datos = guion.slice(0,12), k = 12;
+  const estados = [
+    [.55,'Bien','#e6f4dc','#5e9a1c','#2f5c0c'],
+    [.78,'Atención','#fff1d6','#e09a1a','#7a4c00'],
+    [9,'Alerta','#fde2dc','#e4573d','#8f2412']
+  ];
+  const pinta = () => {
+    const pts = datos.map((v,i) => [18 + i*(84/11), 180 - v*46]);
+    line.setAttribute('points', pts.map(p => p[0].toFixed(1)+','+p[1].toFixed(1)).join(' '));
+    const u = pts[pts.length-1]; end.setAttribute('cx', u[0]); end.setAttribute('cy', u[1]);
+    const v = datos[datos.length-1];
+    const e = estados.find(x => v < x[0]);
+    st.textContent = e[1]; card.setAttribute('fill', e[2]); dot.setAttribute('fill', e[3]); st.setAttribute('fill', e[4]);
+    end.setAttribute('fill', e[3]);
+    const ph = (7.3 - v*1.4).toFixed(1).replace('.', ',');
+    val.textContent = 'pH ' + ph + ' · ' + (23 + Math.round(v*3)) + ' °C';
+  };
+  pinta();
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    setInterval(() => { datos.shift(); datos.push(guion[k % guion.length]); k++; pinta(); }, 1500);
+  }
+}
+
+/* ---------- Portada: en pantallas angostas se encuadra la caja y el celular ---------- */
+{
+  const scene = document.querySelector('.scene svg');
+  const mq = matchMedia('(max-width: 600px)');
+  const frame = () => scene.setAttribute('viewBox', mq.matches ? '400 0 700 470' : '0 0 1200 470');
+  frame(); mq.addEventListener('change', frame);
+}
 
 /* ---------- Casas del barrio en la ilustración de portada ---------- */
 let sd = 7; const r = () => (sd = sd * 16807 % 2147483647) / 2147483647;

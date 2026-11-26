@@ -5,7 +5,7 @@
   Para editar textos: busque el capítulo (id="c1", id="c2"...) y cambie el texto entre etiquetas.
   Las imágenes usan data-media="nombre" y se cargan desde la URL definida en assets/js/config.js.
   Guía completa: README.md y carpeta docs/.
-  IMPORTANTE: cada vez que cambie styles.css, config.js o main.js, suba el número ?v=5 (a ?v=5, ?v=6...)
+  IMPORTANTE: cada vez que cambie styles.css, config.js o main.js, suba el número ?v= (por ejemplo de ?v=7 a ?v=7)
   en las líneas que los cargan, para que los celulares no muestren la versión vieja guardada en memoria.
 -->
 <html lang="es">
@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css?v=5">
+<link rel="stylesheet" href="assets/css/styles.css?v=7">
 </head>
 <body>
 
@@ -38,17 +38,11 @@
     <div class="cover-text">
       <div>
         <h1>Cuidando juntos la quebrada La Picacha</h1>
-        <p class="lead">Un boletín para la Junta de Acción Comunal Guanteros: cómo va el proyecto, cómo funciona la tecnología y cómo pueden acompañarlo y vigilarlo.</p>
+        <p class="lead">Boletín n.º 1 para la Junta de Acción Comunal Guanteros, Belén Las Violetas. Cómo va el proyecto Fotón-IA, cómo funciona la tecnología y cómo pueden acompañarlo y vigilarlo.</p>
         <div class="cta">
           <a class="btn btn-light" href="#c1">Empezar a leer</a>
           <a class="btn btn-ghost" href="#c4">Ver el video del sensor</a>
         </div>
-      </div>
-      <div class="meta">
-        <b>Plataforma Fotón-IA</b>
-        <span>Monitoreo inteligente del agua</span>
-        <span>Belén Las Violetas, Comuna 16, Medellín</span>
-        <span>Boletín n.º 1 · noviembre de 2026</span>
       </div>
     </div>
     <div class="scene">
@@ -199,6 +193,11 @@
       <p style="margin:0">Cuando el agua trae plomo, las partículas se pegan al anillo y cambian la pista. Entonces encaja otro color. El lector de luz nota ese cambio y lo convierte en una cifra: cuánto plomo hay en el agua.</p>
     </div>
   </div>
+  <h3 style="margin-top:28px">Así se ve un chip real</h3>
+  <div class="chipreal">
+    <figure class="photo"><img data-media="chip-nitruro" alt="Chip fotónico de nitruro de silicio junto a una moneda" data-cap="Chip fotónico de nitruro de silicio, fabricado en Francia, junto a una moneda"><figcaption>Chip de nitruro de silicio, un material que guía la luz. Fabricado en Francia.</figcaption></figure>
+    <figure class="photo"><img data-media="chip-moneda" alt="Chip fotónico junto a una moneda de 200 pesos" data-cap="Otro de los chips del proyecto junto a una moneda de 200 pesos"><figcaption>Otro chip del proyecto, junto a una moneda de 200 pesos.</figcaption></figure>
+  </div>
   <div class="folio"><span>Fotón-IA · Boletín n.º 1</span><span class="pg"></span></div>
 </section>
 
@@ -235,7 +234,7 @@
             <path d="M96 100 C96 132 144 132 144 100" fill="none" stroke="#fff" stroke-width="12" opacity=".08"/>
             <g fill="#c9d6d3"><circle class="bob" cx="80" cy="118" r="3.5"/><circle class="bob b2" cx="162" cy="110" r="3"/><circle class="bob b3" cx="120" cy="104" r="3"/></g>
           </svg>
-          <figcaption><b>Fibra óptica</b>La luz viaja por un hilo de vidrio. Donde toca el agua, lo que trae el agua cambia cuánta luz sale.</figcaption>
+          <figcaption><b>Fibra óptica</b>La luz viaja por un hilo de vidrio. Lo que trae el agua genera cambios en la luz que pueden ser medidos y analizados.</figcaption>
         </figure>
       </div></li>
     <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12a7 7 0 0 1 14 0M8 12a4 4 0 0 1 8 0"/><circle cx="12" cy="12" r="1.5"/><path d="M12 14v7"/></svg></span><div><h3>Enviar</h3><p>Los datos viajan sin cables, por una señal de radio que llega lejos, hasta computadores que los guardan con copia de seguridad.</p></div><img data-media="sistema-rio" alt="Ilustración del sistema de medición en la orilla del río" data-cap="Así se verá el sistema en la orilla: caja solar, antena y datos que llegan al computador y al celular"></li>
@@ -318,12 +317,16 @@
     <li><span class="pin">En línea</span><div><b>2 ponencias internacionales</b><p>El ITM presentó sus avances en sensores ante investigadores de varios países.</p></div></li>
     <li><span class="pin">Bogotá</span><div><b>3 trabajos en el congreso latinoamericano de óptica</b><p>Más investigadores de la región conocen el proyecto.</p></div></li>
   </ol>
-  <div class="two">
-    <figure class="photo"><img data-media="posters" alt="Los tres pósteres presentados en el congreso internacional" data-cap="Pósteres de Fotón-IA presentados en el congreso internacional de óptica en Nueva York"><figcaption>Los tres pósteres de Fotón-IA.</figcaption></figure>
-    <div class="nums" style="grid-template-columns:minmax(0,1fr)">
-      <div class="num"><b>8</b><span>trabajos en congresos internacionales</span></div>
-      <div class="num"><b>3</b><span>países trabajando juntos: Colombia, Estados Unidos y Francia</span></div>
-    </div>
+  <div class="nums world-nums">
+    <div class="num"><b>8</b><span>trabajos en congresos internacionales</span></div>
+    <div class="num"><b>3</b><span>países trabajando juntos: Colombia, Estados Unidos y Francia</span></div>
+  </div>
+  <h3 style="margin-top:28px">En imágenes</h3>
+  <div class="mural">
+    <figure class="photo m-wide"><img data-media="congreso-laop" alt="Investigador de Fotón-IA dando una charla en el congreso LAOP" data-cap="Charla de Fotón-IA en el congreso latinoamericano de óptica y fotónica LAOP 2026, Bogotá"><figcaption>Charla en el congreso latinoamericano de óptica, Bogotá.</figcaption></figure>
+    <figure class="photo m-tall"><img data-media="congreso-poster-udem" alt="Investigador de Fotón-IA junto a su póster en un congreso" data-cap="Investigador de la Universidad de Medellín presentando su póster"><figcaption>Presentando un póster del proyecto.</figcaption></figure>
+    <figure class="photo m-poster"><img data-media="posters" alt="Los tres pósteres presentados en el congreso internacional de óptica en Nueva York" data-cap="Pósteres de Fotón-IA en el congreso internacional de óptica, Nueva York"><figcaption>Tres pósteres en Nueva York.</figcaption></figure>
+    <figure class="photo m-poster"><img data-media="poster-itm" alt="Póster del ITM en el congreso internacional en línea ICNDT 2026" data-cap="Póster del ITM en el primer congreso internacional en línea de ensayos no destructivos (ICNDT 2026)"><figcaption>Póster del ITM en un congreso internacional en línea.</figcaption></figure>
   </div>
   <div class="folio"><span>Fotón-IA · Boletín n.º 1</span><span class="pg"></span></div>
 </section>
@@ -366,14 +369,24 @@
   <span class="chap">Capítulo 11</span>
   <h2>Quiénes hacemos Fotón-IA</h2>
   <p class="intro">Cuatro instituciones de Medellín y la comunidad, con el apoyo de Ruta N y aliados de otros países.</p>
-  <div class="orgs">
-    <div class="org jac"><span class="tag">Comunidad</span><h3>JAC Guanteros</h3><p style="margin:0">Actor fundamental. Ayuda a elegir dónde medir, diseña con nosotros el Tablero Comunitario y lidera la veeduría.</p></div>
-    <div class="org"><div class="lg"><img data-media="logo-udem" alt="Universidad de Medellín"></div><h3>Universidad de Medellín</h3><p>Coordina el proyecto y crea la app con inteligencia artificial.</p></div>
-    <div class="org"><div class="lg"><img data-media="logo-unal" alt="Universidad Nacional de Colombia"></div><h3>Universidad Nacional de Colombia</h3><p>Diseña los chips de luz que encuentran contaminantes.</p></div>
-    <div class="org"><div class="lg"><img data-media="logo-itm" alt="Institución Universitaria ITM"></div><h3>Instituto Tecnológico Metropolitano</h3><p>Hace los sensores de fibra óptica y la caja que envía los datos.</p></div>
-    <div class="org"><div class="lg"><img data-media="logo-udea" alt="Universidad de Antioquia"></div><h3>Universidad de Antioquia</h3><p>Analiza el agua en el laboratorio y busca sacar energía de las aguas residuales.</p></div>
+  <div class="org jac"><span class="tag">Comunidad</span><h3>JAC Guanteros</h3><p style="margin:0">Actor fundamental. Ayuda a elegir dónde medir, diseña con nosotros el Tablero Comunitario y lidera la veeduría.</p></div>
+  <h3 class="grp">Universidades</h3>
+  <div class="logos-grid">
+    <figure class="lgcard"><img data-media="logo-udem" data-fallback="name" alt="Universidad de Medellín"><figcaption>Universidad de Medellín</figcaption></figure>
+    <figure class="lgcard"><img data-media="logo-unal" data-fallback="name" alt="Universidad Nacional de Colombia"><figcaption>Universidad Nacional de Colombia</figcaption></figure>
+    <figure class="lgcard"><img data-media="logo-udea" data-fallback="name" alt="Universidad de Antioquia"><figcaption>Universidad de Antioquia</figcaption></figure>
+    <figure class="lgcard"><img data-media="logo-itm" data-fallback="name" alt="Instituto Tecnológico Metropolitano"><figcaption>Instituto Tecnológico Metropolitano</figcaption></figure>
   </div>
-  <div class="box allies"><div class="lg"><img data-media="logo-rutan" alt="Ruta N Medellín"></div><div><h3>Con el apoyo de Ruta N</h3><p style="margin:0">Y de aliados internacionales en Estados Unidos y Francia, que ayudan a fabricar y probar los chips y a mejorar la inteligencia artificial.</p></div></div>
+  <h3 class="grp">Financia</h3>
+  <div class="logos-grid one">
+    <figure class="lgcard"><img data-media="logo-rutan" data-fallback="name" alt="Ruta N"><figcaption>Ruta N</figcaption></figure>
+  </div>
+  <h3 class="grp">Aliados internacionales</h3>
+  <div class="logos-grid three">
+    <figure class="lgcard"><img data-media="logo-bsu" data-fallback="name" alt="Bridgewater State University"><figcaption>Bridgewater State University</figcaption></figure>
+    <figure class="lgcard"><img data-media="logo-c2n" data-fallback="name" alt="C2N"><figcaption>Centro de Nanociencias y Nanotecnologías (C2N)</figcaption></figure>
+    <figure class="lgcard"><img data-media="logo-toulouse" data-fallback="name" alt="Universidad de Toulouse"><figcaption>Universidad de Toulouse</figcaption></figure>
+  </div>
   <div class="folio"><span>Fotón-IA · Boletín n.º 1</span><span class="pg"></span></div>
 </section>
 
@@ -439,7 +452,7 @@
   <div><img id="lbImg" alt=""><p id="lbCap"></p></div>
 </div>
 
-<script src="assets/js/config.js?v=5"></script>
-<script src="assets/js/main.js?v=5"></script>
+<script src="assets/js/config.js?v=7"></script>
+<script src="assets/js/main.js?v=7"></script>
 </body>
 </html>

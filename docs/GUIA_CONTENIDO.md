@@ -71,4 +71,10 @@ Si quiere conservar el n.º 1 en línea, copie `public/index.html` a `public/n1.
 
 ## Logos
 
-Los logos ya están en el pie de página y en el capítulo 12 (`logo-udem`, `logo-unal`, `logo-udea`, `logo-itm`, `logo-rutan`). Están en el repositorio de medios, igual que las fotos.
+Los logos están en el capítulo 11 y en el pie de página. Cada uno es una tarjeta con logo y nombre:
+
+```html
+<figure class="lgcard"><img data-media="logo-c2n" data-fallback="name" alt="C2N"><figcaption>Centro de Nanociencias y Nanotecnologías (C2N)</figcaption></figure>
+```
+
+Si el archivo del logo todavía no está en el repositorio de medios, la tarjeta muestra el nombre en un recuadro, sin romperse. Para agregarlo, súbalo al repositorio `boletin-foton-ia-media` con el nombre exacto (por ejemplo `logo-c2n.jpg`).

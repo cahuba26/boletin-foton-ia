@@ -31,15 +31,23 @@ Las imágenes salen de los PDF de los informes mensuales (las versiones dentro d
 | `bio-horno.jpg` | 400×507 | 43 KB | Mufla para sólidos | Informe 3 | Galería |
 | `video-portada.jpg` | 1280×720 | 39 KB | Imagen antes de reproducir | Video UNAL, segundo 3 | Cap. 4 |
 
+| `chip-nitruro.jpg` | 750×1000 | 131 KB | Chip de nitruro de silicio con moneda | Carpeta `chips` | Cap. 4, galería |
+| `congreso-laop.jpg` | 1400×939 | 145 KB | Charla en LAOP 2026, Bogotá | Carpeta `congresos` (Juanes.jpg) | Cap. 8, galería |
+| `congreso-poster-udem.jpg` | 750×1000 | 151 KB | Investigador con póster de la UdeM | Carpeta `congresos` (Leandro.jpg) | Cap. 8, galería |
+| `poster-itm.jpg` | 780×1100 | 238 KB | Póster del ITM, ICNDT 2026 (en línea) | Carpeta `congresos` | Cap. 8, galería |
+
 ## Logos
 
 | Nombre | Tamaño | Peso | Qué muestra | Origen | Dónde se usa |
 |---|---|---|---|---|---|
-| `logo-udem.jpg` | 501×324 | 40 KB | Logo Universidad de Medellín (recortado, fondo blanco) | Carpeta `Logos` | Cap. 12, pie de página |
-| `logo-unal.jpg` | 664×296 | 51 KB | Logo Universidad Nacional de Colombia (recortado, fondo blanco) | Carpeta `Logos` | Cap. 12, pie de página |
-| `logo-udea.jpg` | 254×324 | 27 KB | Logo Universidad de Antioquia (recortado, fondo blanco) | Carpeta `Logos` | Cap. 12, pie de página |
-| `logo-itm.jpg` | 469×324 | 35 KB | Logo ITM (recortado, fondo blanco) | Carpeta `Logos` | Cap. 12, pie de página |
-| `logo-rutan.jpg` | 567×324 | 25 KB | Logo Ruta N (recortado, fondo blanco) | Carpeta `Logos` | Cap. 12, pie de página |
+| `logo-udem.jpg` | 501×324 | 40 KB | Logo Universidad de Medellín (recortado, fondo blanco) | Carpeta `Logos` | Cap. 11, pie de página |
+| `logo-unal.jpg` | 664×296 | 51 KB | Logo Universidad Nacional de Colombia (recortado, fondo blanco) | Carpeta `Logos` | Cap. 11, pie de página |
+| `logo-udea.jpg` | 254×324 | 27 KB | Logo Universidad de Antioquia (recortado, fondo blanco) | Carpeta `Logos` | Cap. 11, pie de página |
+| `logo-itm.jpg` | 469×324 | 35 KB | Logo ITM (recortado, fondo blanco) | Carpeta `Logos` | Cap. 11, pie de página |
+| `logo-rutan.jpg` | 567×324 | 25 KB | Logo Ruta N (recortado, fondo blanco) | Carpeta `Logos` | Cap. 11, pie de página |
+| `logo-bsu.jpg` | 368×324 | 23 KB | Logo Bridgewater State University (recortado, fondo blanco) | Carpeta `Logos` | Cap. 11 |
+| `logo-c2n.jpg` | 328×324 | 14 KB | Logo C2N, Francia (recortado, fondo blanco) | Carpeta `Logos` | Cap. 11 |
+| `logo-toulouse.jpg` | 664×193 | 27 KB | Logo Universidad de Toulouse (recortado, fondo blanco) | Carpeta `Logos` | Cap. 11 |
 
 ## Video
 
