@@ -2,7 +2,7 @@
 
 Registro de lo decidido y lo construido, para que cualquier persona del equipo pueda continuar el trabajo.
 
-**Estado al 25 de noviembre de 2026:** boletín n.º 1 completo. Los dos repositorios están en GitHub (cuenta `cahuba26`) y los medios ya están publicados en Render. Falta publicar el boletín en Render.
+**Estado al 26 de noviembre de 2026:** boletín n.º 1 publicado en https://boletin-foton-ia.onrender.com (aún no compartido con la JAC: en pruebas en celulares). Medios en https://boletin-foton-ia-media.onrender.com (35 archivos).
 
 ---
 
@@ -83,6 +83,7 @@ Las animaciones se detienen si el celular tiene activada la opción de reducir m
 | v1 | 25 nov 2026 | Primera versión: 10 capítulos, portada ilustrada, video, galería, veeduría. |
 | v2 | 25 nov 2026 | Reestructura como sitio estático para GitHub + Render; medios por URL; documentación; capítulos del sensor de luz (video por pasos) y de la app. |
 | v3 | 25 nov 2026 | Logos; sin presupuesto ni cronogramas; lenguaje más sencillo; capítulos "Nuestro encuentro con la JAC" y "La Picacha llega al mundo". |
+| v7.1 | 26 nov 2026 | Boletín publicado en Render; medios actualizados (35 archivos). |
 | v7 | 25 nov 2026 | Logos de aliados internacionales (BSU, C2N, Toulouse); se retira MIT. |
 | v6 | 25 nov 2026 | Foto del chip de nitruro de silicio (cap. 4); mural de fotos de congresos y póster del ITM (cap. 8); "Quiénes hacemos" solo con logos y nombres, con Ruta N y aliados internacionales aparte; nuevo texto de la fibra óptica; portada del mismo ancho que las páginas y sin recuadro de datos; galería con pestaña "Congresos". |
 | v5 | 25 nov 2026 | Repositorios en GitHub; medios publicados en Render; `config.js` apunta al sitio de medios. |
@@ -95,10 +96,12 @@ Las animaciones se detienen si el celular tiene activada la opción de reducir m
 - [x] Crear los dos repositorios en GitHub: `cahuba26/boletin-foton-ia-media` y `cahuba26/boletin-foton-ia`.
 - [x] Publicar los medios en Render: https://boletin-foton-ia-media.onrender.com
 - [x] Poner la dirección de los medios en `config.js`.
-- [ ] Publicar el boletín en Render (Blueprint de `cahuba26/boletin-foton-ia`).
+- [x] Publicar el boletín en Render: https://boletin-foton-ia.onrender.com
+- [ ] Revisar que **Auto-Deploy** esté activo en los dos sitios de Render (el de medios no se actualizó solo con un `git push`; se desplegó a mano).
+- [ ] Probar en varios celulares (Android y iPhone, wifi y datos) antes de compartir.
 - [x] Trabajos de LAOP (Bogotá) presentados: confirmado con la foto de la charla.
 - [x] Logos de los aliados internacionales: Bridgewater State University, C2N y Universidad de Toulouse (MIT no se incluye, por decisión del equipo).
-- [ ] Subir las fotos y logos nuevos al repositorio de medios (`git push` en `boletin-foton-ia-media`).
+- [x] Fotos y logos nuevos publicados en el sitio de medios.
 - [ ] Confirmar el correo de contacto publicado.
 - [ ] Confirmar la autorización de las personas en las fotos de la visita.
 - [ ] Que la UNAL revise la explicación del video (capítulo 4).
